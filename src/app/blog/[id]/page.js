@@ -1,12 +1,10 @@
 import React from 'react';
 
 const SingleArticlePage = async ({ params }) => {
-  const ps = await params;
-
-  console.log("ps: ", ps);
+  const { id } = await params;
   return (
     <div>
-      <h1>Article: </h1>
+      <h1>Article: {id}</h1>
     </div>
   );
 };
