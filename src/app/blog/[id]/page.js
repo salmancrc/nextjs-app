@@ -1,7 +1,13 @@
 import React from 'react';
 
-const BlogPage = () => (
-  <h1>Blog Post</h1>
-);
+const SingleArticlePage = async ({ params }) => {
+  const { id } = await params;
+  return (
+    <div>
+      <h1>Article: {id}</h1>
+    </div>
+  );
+};
 
-export default BlogPage;
+export default SingleArticlePage;
+
