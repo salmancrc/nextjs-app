@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import RootLayout from '../layout';
 
 const posts = [
   {
@@ -17,12 +18,6 @@ const posts = [
 export default function BlogPage() {
   return (
     <div>
-      <nav className="flex gap-4 pb-3.5">
-        <Link href="/">Logo</Link>
-        <Link href="/">Home</Link>
-        <Link href="/blog">Blog</Link>
-      </nav>
-
       <h1>Blog posts</h1>
       {posts.map((post) => (
         <Link key={post.id} href={`/blog/${post.id}`}>
