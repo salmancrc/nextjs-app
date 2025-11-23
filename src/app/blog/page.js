@@ -15,18 +15,25 @@ const posts = [
   },
 ];
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const data = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const posts = await data.json()
+
   return (
     <div>
       <h1>Blog posts</h1>
-      {posts.map((post) => (
-        <Link key={post.id} href={`/blog/${post.id}`}>
-          <div className='mb-4'>
-            <h2>{post.title}</h2>
-            <div>{post.body}</div>
+      <div className='mt-4'>
+        {posts.map((post) => (
+          <div key={post.id}  className='border mb-4'>
+            <Link href={`/blog/${post.id}`}>
+              <div className='p-4'>
+                <h2 className='text-indigo-500'>{post.title}</h2>
+                <div>{post.body}</div>
+              </div>
+            </Link>
           </div>
-        </Link>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
