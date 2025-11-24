@@ -18,6 +18,8 @@ export default async function BlogPage() {
   // const data = await fetch('https://jsonplaceholder.typicode.com/posts', { cache: 'no-store' })
   // const posts = await data.json()
 
+  console.log('Server Component');
+
   const promise = fetch('https://jsonplaceholder.typicode.com/posts').then((res) => res.json());
 
   return (

@@ -5,7 +5,8 @@ import { use } from "react"
 
 const Posts = ({ promise }) => {
   const posts = use(promise);
-  
+
+  console.log('Client Component');
   return (
     <div className='mt-4'>
       {posts.map((post) => (
