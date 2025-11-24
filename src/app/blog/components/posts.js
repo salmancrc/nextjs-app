@@ -1,6 +1,11 @@
 'use client'
 
-const Posts = () => {
+import Link from "next/link";
+import { use } from "react"
+
+const Posts = ({ promise }) => {
+  const posts = use(promise);
+  
   return (
     <div className='mt-4'>
       {posts.map((post) => (
